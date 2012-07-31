@@ -1,0 +1,33 @@
+[github]
+        user = jblackburn@drw.com
+        token = c7ffa9d6e879a78053854b5116ca00d2
+[user]
+        name = jblackburn
+        token = c7ffa9d6e879a78053854b5116ca00d2
+        email = jblackburn@drw.com
+
+[alias]
+    st = status
+    d = diff
+    ci = commit -v
+    cia = commit -v -a
+    co = checkout
+    cp = cherry-pick
+    l = log
+    ll = log -p
+    lt = log trunk..
+    llt = log -p trunk..
+    lm = log master..
+    llm = log -p master..
+    b = branch
+    gl = log --oneline --graph --branches --decorate
+    ignore = update-index --assume-unchanged
+    unignore = update-index --no-assume-unchanged
+[core]
+[color]
+        ui = auto
+[push]
+        default = matching
+
+[core]
+	editor = vim
