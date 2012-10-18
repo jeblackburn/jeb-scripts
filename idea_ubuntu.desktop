@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=Intellij Idea
+GenericName=Idea
+Comment=Launch IDE
+Exec=/home/jblackburn/dev/corsair/Mutiny/intellij.rb
+Icon=shotwell
+Terminal=false
+Type=Application
+Categories=Graphics;Photography;GNOME;GTK;
