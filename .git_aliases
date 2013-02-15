@@ -3,3 +3,10 @@ alias gl='git log --graph --format='\''%Cred%h%Creset %s    %C(yellow)%an | %C(c
 alias gs='git status'
 alias go='git checkout'
 
+function git-clorig {
+    git status -su | grep -e"\.orig$" | cut -f2 -d" " | xargs rm
+}
+
+function git-sorig {
+    git status -su | grep -e"\.orig$" | cut -f2 -d" "
+}
