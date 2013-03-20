@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#Courtesy Greg Fast
+#git://git.drwholdings.com/gfast/dot-bash.git
 __package_fig_dir() {
   if [ -x /bin/readlink ]; then
     if [ -z "$1" ]; then

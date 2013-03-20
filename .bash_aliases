@@ -1,11 +1,12 @@
+#Courtesy Greg Fast
+#git://git.drwholdings.com/gfast/dot-bash.git
+
 if [ -f ~/.git_aliases ]; then
 	. ~/.git_aliases
 fi
 
-if [ -f ~/dot-bash/aliases.bash-wud-gfast01 ]; then
-	. ~/dot-bash/aliases.bash-wud-gfast01
-fi
-
+#Courtesy Greg Fast
+#git://git.drwholdings.com/gfast/dot-bash.git
 if [ -f ~/dot-bash/git.bash ]; then
 	. ~/dot-bash/git.bash
 fi
