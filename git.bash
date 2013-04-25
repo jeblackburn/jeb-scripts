@@ -2,45 +2,6 @@
 
 #Courtesy Greg Fast
 #git://git.drwholdings.com/gfast/dot-bash.git
-__package_fig_dir() {
-  if [ -x /bin/readlink ]; then
-    if [ -z "$1" ]; then
-      __package_fig_dir .
-    else
-      if [ "x$1" == "x/" ]; then
-        echo ""
-      else
-        d=$(/bin/readlink -f "$1")
-        if [ -z "$d" ]; then
-          echo "" # pwd has gone missing
-        else
-          if [ -e "$d/package.fig" ]; then
-            echo $d
-          else
-            __package_fig_dir $(dirname "$d")
-          fi
-        fi
-      fi
-    fi
-  fi
-}
-
-__fig_u_ps1() {
-  d=$(__package_fig_dir)
-  if [ -n "$d" ]; then
-    updated_file="$d/.fig_updated"
-    if [ -e "$d/.fig/retrieve" ]; then
-      updated_file="$d/.fig/retrieve"
-    fi
-    if [ "$d/package.fig" -nt "$updated_file" ]; then
-      echo -n ' [fig -u!]'
-    fi
-    if [ "$d/../Api/src/Messages/Thrift/Messages.thrift" -nt "$d/generated-sources/.generate-sources" ]; then
-      echo -n ' [api!]' 
-    fi 
-  fi
-}
-
 __git_needs_push() {
   if git rev-list master ^origin/master 2> /dev/null | egrep -q '^[0-9a-f]'; then
     echo -n ' {*}'
@@ -57,7 +18,7 @@ if [ -e /etc/bash_completion.d/git ]; then
   source /etc/bash_completion.d/git
   export GIT_PS1_SHOWDIRTYSTATE=1
   export GIT_PS1_SHOWSTASHSTATE=1
-  export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")$(__fig_u_ps1)$(__git_needs_push)\$ '
+  export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w$(__git_ps1 " (%s)")$(__git_needs_push)\$ '
   complete -o bashdefault -o nospace -F _git_checkout go
   complete -o bashdefault -o nospace -F _git_log gl
 fi
