@@ -11,18 +11,14 @@ apervita.prefix = *
 apervita.username = jon.blackburn
 apervita.schemes = http https ssh
 
+[extdiff]
+cmd.kdiff3 =
+
 [merge-tools]
-meld.args = $local $base $other $output
+meld.args = $local $other $base 
 
 [paths]
-pervasive = ssh://hg@bitbucket.org/pervasive/cobalt
-core = ssh://hg@bitbucket.org/apervita/core
-web = ssh://hg@bitbucket.org/apervita/web
-static = ssh://hg@bitbucket.org/apervita/static
-toolslinux = ssh://hg@bitbucket.org/apervita/tools_linux
-toolsmac = ssh://hg@bitbucket.org/apervita/tools_mac
-toolswin = ssh://hg@bitbucket.org/apervita/tools_win
-ontology = ssh://hg@bitbucket.org/apervita/reducedtc
+apervita = ssh://hg@bitbucket.org/apervita
 libs = ssh://hg@bitbucket.org/apervita/libs
 #cobreqs =  ~/dev/projects/cobaltEggs
 #deptools = ~/code/deployment_tools
@@ -30,15 +26,15 @@ libs = ssh://hg@bitbucket.org/apervita/libs
 [hooks]
 #pretxncommit.pep8 = python:hghooks.code.pep8hook
 #pretxncommit.pyflakes = python:hghooks.code.pyflakeshook
-pretxncommit.pdb = python:hghooks.code.pdbhook
+#pretxncommit.pdb = python:hghooks.code.pdbhook
 #pretxncommit.jslint = python:hghooks.code.jslinthook
 
 [pep8]
 ignore = E501
 
 [extensions]
-prompt = $HOME/hg-prompt/prompt.py
-hgshelve = $HOME/hgshelve/hgshelve.py
+#prompt = $HOME/hg-prompt/prompt.py
+#hgshelve = $HOME/hgshelve/hgshelve.py
 fetch =
 graphlog =
 pager =
@@ -46,6 +42,7 @@ rebase =
 color =
 transplant =
 mq =
+hgext.extdiff =
 
 [color]
 custom.rev = red
@@ -58,6 +55,7 @@ custom.date = cyan
 pager = LESS='FRX' less
 
 [alias]
-rbd=rebase --keepbranches -d default
+rbt=rebase --keepbranches -d trunk
 rb=rebase --keepbranches
 local=outgoing --style $HOME/jeb-scripts/hg_oneline.style
+show = log --color=always -pr
