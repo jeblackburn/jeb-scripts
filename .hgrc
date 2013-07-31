@@ -1,3 +1,10 @@
+# INclude this file in another .hgrc using something like
+# %include ~/jeb-scripts/.hgrc
+
+
+[ui]
+merge = meld
+
 [merge-tools]
 # requires the merge tool under the ui section be set to meld (i.e. merge=meld)
 meld.args = $local $other $base 
