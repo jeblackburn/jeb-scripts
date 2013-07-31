@@ -1,27 +1,6 @@
-[ui]
-username = Jon Blackburn <jon.blackburn@pervasive-health.com>
-editor = vim
-merge = meld
-
-[auth]
-pervasive.prefix = *
-pervasive.username = jon.blackburn
-pervasive.schemes = http https ssh
-apervita.prefix = *
-apervita.username = jon.blackburn
-apervita.schemes = http https ssh
-
-[extdiff]
-cmd.kdiff3 =
-
 [merge-tools]
+# requires the merge tool under the ui section be set to meld (i.e. merge=meld)
 meld.args = $local $other $base 
-
-[paths]
-apervita = ssh://hg@bitbucket.org/apervita
-libs = ssh://hg@bitbucket.org/apervita/libs
-#cobreqs =  ~/dev/projects/cobaltEggs
-#deptools = ~/code/deployment_tools
 
 [hooks]
 #pretxncommit.pep8 = python:hghooks.code.pep8hook
