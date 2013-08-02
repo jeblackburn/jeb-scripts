@@ -3,11 +3,24 @@
 
 
 [ui]
-merge = meld
+#merge = meld
+#merge = bcompare
+merge = diffuse
+editor = vim
 
 [merge-tools]
 # requires the merge tool under the ui section be set to meld (i.e. merge=meld)
 meld.args = $local $other $base 
+
+bcompare.args=$local $other $base -mergeoutput=$output -ro -lefttitle=parent1 -centertitle=base -righttitle=parent2 -outputtitle=merged -automerge -reviewconflicts -solo
+bcompare.premerge=False
+bcompare.gui=True
+bcompare.priority=-1
+bcompare.diffargs=-lro -lefttitle='$plabel1' -righttitle='$clabel' -solo -expandall $parent $child
+
+diffuse.priority=0
+diffuse.args=$local $base $other
+diffuse.gui=True
 
 [hooks]
 #pretxncommit.pep8 = python:hghooks.code.pep8hook
