@@ -4,8 +4,8 @@
 
 [ui]
 #merge = meld
-#merge = bcompare
-merge = diffuse
+merge = bcompare
+#merge = diffuse
 editor = vim
 
 [merge-tools]
@@ -42,6 +42,7 @@ color =
 transplant =
 mq =
 hgext.extdiff =
+collapse = $HOME/src/hgcollapse/hgext/collapse.py
 
 [color]
 custom.rev = red
@@ -49,6 +50,7 @@ custom.author = yellow
 custom.desc = green
 custom.branch = blue
 custom.date = cyan
+custom.tags = blue bold
 
 [pager]
 pager = LESS='FRX' less
