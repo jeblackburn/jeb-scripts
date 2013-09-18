@@ -1,1 +1,1 @@
-changeset = "{label('custom.rev', rev)} {label('custom.rev',node|short)}  {label('custom.desc', desc|firstline)} {label('custom.date', date|isodate)} {label('custom.author', author|person)}  {label('custom.tag', bookmarks)} {label('custom.tag', tags)}"
+changeset = "{label('custom.rev', rev)} {label('custom.rev',node|short)}  {label('custom.desc', desc|firstline)} {label('custom.date', date|isodate)} {label('custom.author', author|person)} {label('custom.branch', branches)} {label('custom.tag', bookmarks)} {label('custom.tag', tags)}"

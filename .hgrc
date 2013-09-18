@@ -48,7 +48,7 @@ collapse = $HOME/src/hgcollapse/hgext/collapse.py
 custom.rev = red
 custom.author = yellow
 custom.desc = green
-custom.branch = blue
+custom.branch = blue bold
 custom.date = cyan
 custom.tags = blue bold
 
