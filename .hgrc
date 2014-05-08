@@ -4,8 +4,9 @@
 
 [ui]
 #merge = meld
-merge = bcompare
+#merge = bcompare
 #merge = diffuse
+merge = p4
 editor = vim
 
 [merge-tools]
@@ -22,6 +23,12 @@ diffuse.priority=0
 diffuse.args=$local $base $other
 diffuse.gui=True
 
+#p4.priority = 100
+p4.premerge = true  
+p4.executable = $HOME/p4v-2013.2.685561/bin/p4merge
+p4.gui = true
+p4.args = $base $local $other $output
+
 [hooks]
 #pretxncommit.pep8 = python:hghooks.code.pep8hook
 #pretxncommit.pyflakes = python:hghooks.code.pyflakeshook
@@ -32,17 +39,17 @@ diffuse.gui=True
 ignore = E501
 
 [extensions]
-#prompt = $HOME/hg-prompt/prompt.py
-#hgshelve = $HOME/hgshelve/hgshelve.py
 fetch =
 graphlog =
 pager =
 rebase =
 color =
 transplant =
-mq =
 hgext.extdiff =
+shelve =
 collapse = $HOME/src/hgcollapse/hgext/collapse.py
+purge =
+mq =
 
 [color]
 custom.rev = red
