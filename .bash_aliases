@@ -13,4 +13,4 @@ fi
 
 
 alias src='cd ~/src/apervita'
-alias zzz=" echo ''; echo '';  echo ''; echo ''; echo ---------------------------------------------------------------------------------; echo ''; echo ''; echo ''; echo ''"
+alias z=" echo ''; echo '';  echo ''; echo ''; echo ---------------------------------------------------------------------------------; echo ''; echo ''; echo ''; echo ''"
