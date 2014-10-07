@@ -7,10 +7,11 @@ fi
 
 #Courtesy Greg Fast
 #git://git.drwholdings.com/gfast/dot-bash.git
-if [ -f ~/jeb-scripts/git.bash ]; then
-	. ~/jeb-scripts/git.bash
-fi
+#if [ -f ~/jeb-scripts/git.bash ]; then
+#	. ~/jeb-scripts/git.bash
+#fi
 
+l() {
 if [ -z "$1" ]
 then
   filename="apervita_localdev.log"
@@ -28,5 +29,5 @@ export -f l
 
 alias src='cd ~/src/apervita'
 alias z=" echo ''; echo '';  echo ''; echo ''; echo ---------------------------------------------------------------------------------; echo ''; echo ''; echo ''; echo ''"
-
+alias ll='ls -la'
 
