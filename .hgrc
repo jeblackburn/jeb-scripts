@@ -25,7 +25,7 @@ diffuse.gui=True
 
 #p4.priority = 100
 p4.premerge = true  
-p4.executable = $HOME/p4v-2014.1.888424/p4merge
+p4.executable = $HOME/p4v-2014.2.951414/bin/p4merge
 pl4.gui = true
 p4.args = $base $local $other $output
 
