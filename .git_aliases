@@ -1,5 +1,5 @@
 alias gli='git ls-files -v | grep -e "^[hsmrck]"'
-alias gl='git log --graph --format='\''%Cred%h%Creset %s    %C(yellow)%an | %C(cyan)%ad%Creset %C(green bold)%d%Creset'\'' --date=local'
+alias gl='git log --graph --format='\''%Cred%h%Creset %s    %C(yellow)%an | %C(cyan)%ad%Creset %C(green bold)%d%Creset'\'' --branches --decorate --date=local'
 alias gs='git status'
 alias go='git checkout'
 

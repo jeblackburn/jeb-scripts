@@ -27,6 +27,15 @@ $0 !~ /INFO|ERROR/ {print $0}
 }
 export -f l
 
+t() {
+tail -F $1 | awk '
+$0 ~ /INFO/ {print "\033[32m" $0 "\033[39m"}
+$0 ~ /ERROR/ {print "\033[31m" $0 "\033[39m"}
+$0 !~ /INFO|ERROR/ {print $0}
+'
+}
+export -f t
+
 alias src='cd ~/src/apervita'
 alias z=" echo ''; echo '';  echo ''; echo ''; echo ---------------------------------------------------------------------------------; echo ''; echo ''; echo ''; echo ''"
 alias ll='ls -la'
