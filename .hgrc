@@ -6,8 +6,10 @@
 #merge = meld
 #merge = bcompare
 #merge = diffuse
-merge = p4
-editor = vim
+#merge = p4
+#editor = vim
+ui.merge = internal:merge
+merge = internal:merge
 
 [merge-tools]
 # requires the merge tool under the ui section be set to meld (i.e. merge=meld)
@@ -34,6 +36,7 @@ p4.args = $base $local $other $output
 #pretxncommit.pyflakes = python:hghooks.code.pyflakeshook
 #pretxncommit.pdb = python:hghooks.code.pdbhook
 #pretxncommit.jslint = python:hghooks.code.jslinthook
+#pretxncommit.merge = python:merge_to_branch.prevent_merge_to_non_default_branch
 
 [pep8]
 ignore = E501
@@ -50,6 +53,7 @@ shelve =
 collapse = $HOME/src/hgcollapse/hgext/collapse.py
 purge =
 mq =
+histedit =
 
 [color]
 custom.rev = red
