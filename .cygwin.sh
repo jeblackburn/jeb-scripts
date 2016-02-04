@@ -1,0 +1,2 @@
+export LESS="-X"
+
