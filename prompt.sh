@@ -40,7 +40,7 @@ LIGHT_GREEN="\[\033[1;32m\]"
  }
 
  fmt_time () { #format time just the way I likes it
-     datevar=´date +%p´
+     datevar=`date +%p`
      if [ -n $datevar ] && [ "$datevar" = "PM" ]; then
 #     if [ `date +%p` = "PM" ]; then
          meridiem="pm"
@@ -81,7 +81,10 @@ LIGHT_GREEN="\[\033[1;32m\]"
    # Set the BRANCH variable.
    if is_hg_repo; then
      BRANCH=${GREEN}`hg_branch`${COLOR_NONE}
-   else
+  elif is_git_repository; then
+     BRANCH=${GREEEN}`set_git_branch`${COLOR_NONE}
+#     BRANCH=${GREEEN}XXX${COLOR_NONE}
+   else 
      BRANCH=''
    fi
 
